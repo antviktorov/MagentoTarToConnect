@@ -289,7 +289,12 @@ class Pulsestorm_MagentoTarToConnect
             $base_dir = getcwd() . '/' . $base_dir;
         }                        
         $archive_files      = $config['archive_files'];     //'Pulsestorm_Modulelist.tar';    
-        $path_output        = $config['path_output'];       //'/Users/alanstorm/Desktop/working';    
+        $path_output        = $config['path_output'];       //'/Users/alanstorm/Desktop/working';
+
+        if($path_output['0'] !== '/')
+        {
+            $path_output = getcwd() . '/' . $path_output;
+        }
         $archive_connect    = $config['extension_name'] . '-' . $config['extension_version'] . '.tgz';
         ###--------------------------------------------------
         
